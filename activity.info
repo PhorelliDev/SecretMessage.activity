@@ -1,0 +1,8 @@
+[Activity]
+name = Color Schemes
+activity_version = 1
+bundle_id = org.sugarlabs.ColorScheme
+exec = sugar-activity activity.ColorsActivity
+icon = activity-helloworld
+license = GPLv2+
+repository = 
