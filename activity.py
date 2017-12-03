@@ -60,20 +60,24 @@ class SecretMessageActivity(activity.Activity):
 
         # Main layout setup
         layout = Gtk.Grid()
+        layout.set_halign(Gtk.Align.CENTER)
+        layout.set_valign(Gtk.Align.CENTER)
         self.msg = Gtk.Label("This is a secret message!")
-        sbutton = Gtk.Button("Show message")
-        sbutton.connect("clicked", self._show)
-        hbutton = Gtk.Button("Hide Message")
-        hbutton.connect("clicked", self._hide)
+        self.sbutton = Gtk.Button("Show message")
+        self.sbutton.connect("clicked", self._show)
+        self.hbutton = Gtk.Button("Hide Message")
+        self.hbutton.connect("clicked", self._hide)
         layout.attach(self.msg, 0, 0, 2, 1)
-        layout.attach_next_to(sbutton, self.msg, Gtk.PositionType.BOTTOM, 1, 1)
-        layout.attach_next_to(hbutton, sbutton, Gtk.PositionType.RIGHT, 1, 1)
+        layout.attach_next_to(self.sbutton, self.msg, Gtk.PositionType.BOTTOM, 1, 1)
+        layout.attach_next_to(self.hbutton, self.sbutton, Gtk.PositionType.RIGHT, 1, 1)
         self.set_canvas(layout)
         self.show_all()
-    # Show and hide secret message
+
     def _show(self, button):
         self.msg.set_text("This is a secret message!")
-
+        self.sbutton.set_sensitive(False)
+        self.hbutton.set_sensitive(True)
     def _hide(self, button):
         self.msg.set_text("")
-
+        self.sbutton.set_sensitive(True)
+        self.hbutton.set_sensitive(False)
