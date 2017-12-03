@@ -29,9 +29,9 @@ from sugar3.activity.widgets import TitleEntry
 from sugar3.activity.widgets import StopButton
 from sugar3.activity.widgets import ShareButton
 from sugar3.activity.widgets import DescriptionItem
+from playsound import playsound
 
-
-class ColorsActivity(activity.Activity):
+class SugarSoundsActivity(activity.Activity):
     """HelloWorldActivity class as specified in activity.info"""
 
     def __init__(self, handle):
@@ -75,8 +75,12 @@ class ColorsActivity(activity.Activity):
         toolbar_box.show()
 
         # label with the text, make the string translatable
-        vbox = Gtk.Box(spacing=10, orientation=Gtk.Orientation.VERTICAL, halign=Gtk.Align.CENTER)
-        label = Gtk.Label(_("Hello World!"))
-        vbox.pack_start(label, True, True, 0)
-        self.set_canvas(vbox)
+
+        # Main layout setup
+        layout = Gtk.Grid(column_spacing=6, row_spacing=6)
+        label = Gtk.Label(_("Welcome to Sounds!"))
+        layout.add(label)
+        playsound(usr/share/sugar/activities/Sugar-Sounds.activity/res/demo.wav)
+        self.set_canvas(layout)
         self.show_all()
+        
