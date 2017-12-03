@@ -1,8 +1,8 @@
 [Activity]
-name = Color Schemes
+name = Secret Message
 activity_version = 1
-bundle_id = org.sugarlabs.ColorScheme
-exec = sugar-activity activity.ColorsActivity
+bundle_id = org.sugarlabs.SecretMessage
+exec = sugar-activity activity.SecretMessage
 icon = activity-helloworld
 license = GPLv2+
-repository = 
+repository = https://github.com/Thekiddiejsandpython/sugarlabs-activity-gtk
