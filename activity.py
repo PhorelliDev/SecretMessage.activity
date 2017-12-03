@@ -65,6 +65,7 @@ class SecretMessageActivity(activity.Activity):
         self.msg = Gtk.Label("This is a secret message!")
         self.sbutton = Gtk.Button("Show message")
         self.sbutton.connect("clicked", self._show)
+        self.sbutton.set_sensitive(False)
         self.hbutton = Gtk.Button("Hide Message")
         self.hbutton.connect("clicked", self._hide)
         layout.attach(self.msg, 0, 0, 2, 1)
