@@ -2,7 +2,7 @@
 name = Secret Message
 activity_version = 1
 bundle_id = org.sugarlabs.SecretMessage
-exec = sugar-activity activity.SecretMessage
+exec = sugar-activity activity.SecretMessageActivity
 icon = activity-helloworld
 license = GPLv2+
 repository = https://github.com/Thekiddiejsandpython/sugarlabs-activity-gtk
